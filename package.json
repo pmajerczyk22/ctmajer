@@ -1,0 +1,17 @@
+{
+  "name": "ctmajer",
+  "version": "1.0.0",
+  "description": "Test automation project for ctmajer agency",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "javascript",
+    "cypress",
+    "software",
+    "testing"
+  ],
+  "author": "Patryk Majerczyk",
+  "license": "ISC"
+}
