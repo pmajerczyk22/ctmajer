@@ -4,7 +4,7 @@
   "description": "Test automation project for ctmajer agency",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "open": "cypress open"
   },
   "keywords": [
     "javascript",
@@ -13,5 +13,8 @@
     "testing"
   ],
   "author": "Patryk Majerczyk",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^10.11.0"
+  }
 }
