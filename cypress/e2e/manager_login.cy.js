@@ -1,4 +1,4 @@
-import testUser from "../../credentials/credentials.json"
+import testUser from "../../credentials/managerCredentials.json"
 import selectPage from "../support/selectPage.js"
 
 describe('tests for login function', () => {
