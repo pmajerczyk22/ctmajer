@@ -1,23 +1,26 @@
 import testUser from "../../credentials/managerCredentials.json"
-import selectPage from "../support/selectPage.js"
+import BookingPage from "../pages/BookingPage.js"
 import exampleTour from "../support/tourNames.json"
+import LoginPage from "../pages/LoginPage.js"
 
 const login = () => {
     cy.visit('/Account/Login?ReturnUrl=%2F')
-    cy.login(testUser.login,testUser.pass)
+    LoginPage.submitLogin(testUser.login,testUser.pass)
 
 }
 
 describe('tests for adding tour function', () => {
-    it('Positive scenario - manager add tour', () =>{
+    it('Positive scenario - manager add polish tour', () =>{
     login();    
-    selectPage.addTourButtonClick()
-    selectPage.addNameForTour(exampleTour.polishName2,exampleTour.polishPriceList2) 
-    selectPage.numberOfSeats(50)
-    selectPage.typeDateOfTheTrip()
-    selectPage.typeOfTour("polishTour")
-    selectPage.defaultStartingPlace()
-    selectPage.addTheTour()    
-  })
+    BookingPage.addTourButtonClick()
+    BookingPage.addNameForTour(exampleTour.polishName,exampleTour.polishPriceList) 
+    BookingPage.numberOfSeats(50)
+    BookingPage.typeDateOfTheTrip()
+    BookingPage.typeOfTour("polishTour")
+    BookingPage.defaultStartingPlace()
+    BookingPage.addTheTour()    
+  }) 
+    
+
 
 })
