@@ -1,28 +1,21 @@
 import testUser from "../../credentials/managerCredentials.json"
-import LoginPage from "../pages/LoginPage.js"
+import loginPage from "../pages/loginPage.js"
 
 describe('tests for login function', () => {
   beforeEach(() => {
     cy.visit('/Account/Login?ReturnUrl=%2F')
   })
   it('Negative scenario - try to login without credentials', () => {
-    LoginPage.loginButton().click()
-    LoginPage.emptyLoginFieldMessageCheck()
+    loginPage.loginButton().click()
+    loginPage.emptyLoginFieldMsgCheck()
   })
 
   it('Negative scenario - login with incorrect credentials', () => {
-    LoginPage.submitLogin(testUser.incorrectLogin,testUser.incorrectPass)
-    LoginPage.incorrectLoginFieldMessageCheck()
+    loginPage.submitLogin(testUser.incorrectLogin,testUser.incorrectPass)
+    loginPage.verifyIncorrectLoginMsg()
   })
 
-
   it('Positive scenario - login with correct credentials', () => {
-    LoginPage.submitLogin(testUser.login,testUser.pass)
-  
-  }
-  )
-
-  // it('Positive scenario - login with correct credentials', () => {
-  //   cy.login(testUser.login,testUser.pass)
-  // }) 
+    loginPage.submitLogin(testUser.login,testUser.pass)
+  })
 })
