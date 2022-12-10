@@ -1,0 +1,5 @@
+{
+    "ReqLogMsg": "Pole Login jest wymagane.",
+    "ReqPassMsg": "Pole Hasło jest wymagane.",
+    "IncLogPassMsg": "Nazwa użytkownika lub hasło jest niepoprawne"
+}

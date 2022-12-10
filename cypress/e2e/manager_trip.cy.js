@@ -30,16 +30,7 @@ describe('tests for adding tour function', () => {
      bookingPage.defaultStartingPlace()
      bookingPage.addTheTour()    
   })
-  it('Negative scenario - manager try to add tour with negative number of seats', () =>{
-    login();    
-    bookingPage.addTourButtonClick()
-    bookingPage.addNameForTour(exampleTour.foreignName,exampleTour.foreignPriceList) 
-    bookingPage.negativeNumberOfSeats(5)
-    bookingPage.typeDateOfTheTrip("2022-12-09")
-    bookingPage.typeOfTour("foreignTour")
-    bookingPage.defaultStartingPlace()
-    bookingPage.addTheTour()    
-  })
+  
   it('Negative scenario - manager try to add tour with negative number of seats', () =>{
     login();    
     bookingPage.addTourButtonClick()
@@ -50,12 +41,13 @@ describe('tests for adding tour function', () => {
     bookingPage.defaultStartingPlace()
     bookingPage.addTheTour()    
   })
-    it('Negative scenario - manager try to add empty tour', () =>{
+
+  it('Negative scenario - manager try to add empty tour', () =>{
         login();    
         bookingPage.addTourButtonClick()
         bookingPage.addTheTour()  
-        bookingPage.nameFieldErrorMessageCheck()
-        bookingPage.priceListErrorMessageCheck()  
+        bookingPage.nameFieldErrorMsgCheck()
+        bookingPage.priceListErrorMsgCheck()  
   })
   it('Negative scenario - manager try to add tour with past date', () =>{
     login();    
@@ -65,6 +57,8 @@ describe('tests for adding tour function', () => {
     bookingPage.typeDateOfTheTrip("2020-01-07")
     bookingPage.typeOfTour("foreignTour")
     bookingPage.defaultStartingPlace()
-    bookingPage.addTheTour()  
+    bookingPage.addTheTour()
+    bookingPage.dateMsgErrorCheck()
+
 })
 })
