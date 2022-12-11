@@ -1,15 +1,15 @@
 import { LOGIN_SELECTORS } from "../locators/login-selectors"
-import AssertionMsg from "../support/AssertionMsg.json"
+import {assertionMsg} from "../support/assertionMsg"
 
 class loginPage{
 
     emptyLoginFieldMsgCheck(){
-        cy.xpath(LOGIN_SELECTORS.RequieredLogMsg).should('contain.text', AssertionMsg.ReqLogMsg )
-        cy.xpath(LOGIN_SELECTORS.RequieredPassMsg).should('contain.text', AssertionMsg.ReqPassMsg)
+        cy.xpath(LOGIN_SELECTORS.RequieredLogMsg).should('contain.text', assertionMsg.ReqlogMsg)
+        cy.xpath(LOGIN_SELECTORS.RequieredPassMsg).should('contain.text', assertionMsg.ReqPassMsg)
     } 
     
     verifyIncorrectLoginMsg(){
-         cy.xpath(LOGIN_SELECTORS.incorrectLogMsg).should('contain.text', AssertionMsg.IncLogPassMsg)    
+         cy.xpath(LOGIN_SELECTORS.incorrectLogMsg).should('contain.text', assertionMsg.IncLogPassMsg)    
      }
 
     loginButton(){
