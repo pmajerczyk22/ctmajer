@@ -8,5 +8,10 @@ export const assertionMsg = {
     ReqNameMsgXP: `//*[text()='Pole Nazwa jest wymagane.']`,
     IncLogPassMsg: "Nazwa użytkownika lub hasło jest niepoprawne",
     DateErrMsg: "Data początku wycieczki musi być późniejsza niż wczoraj",
-    MgrPer:'add-tour-button'
+    MgrPer: 'add-tour-button',
+    Text: 'contain.text',
+    Id: 'have.id',
+    
+
+
 }

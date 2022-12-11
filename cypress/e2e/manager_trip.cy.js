@@ -2,6 +2,7 @@ import testUser from "../../credentials/managerCredentials.json"
 import bookingPage from "../pages/BookingPage.js"
 import exampleTour from "../support/tourNames.json"
 import loginPage from "../pages/LoginPage.js"
+import { tourVariables } from "../support/tourVariables"
 
 const login = () => {
     cy.visit('/Account/Login?ReturnUrl=%2F')
@@ -14,9 +15,9 @@ describe('tests for adding tour function', () => {
      login();    
      bookingPage.addTourButtonClick()
      bookingPage.addNameForTour(exampleTour.polishName,exampleTour.polishPriceList) 
-     bookingPage.numberOfSeats(50)
+     bookingPage.numberOfSeats(5)
      bookingPage.typeDateOfTheTrip("2023-08-22")
-     bookingPage.typeOfTour("polishTour")
+     bookingPage.typeOfTour(tourVariables.polish)
      bookingPage.defaultStartingPlace()
      bookingPage.addTheTour()    
    })
@@ -24,9 +25,9 @@ describe('tests for adding tour function', () => {
      login();    
      bookingPage.addTourButtonClick()
      bookingPage.addNameForTour(exampleTour.foreignName,exampleTour.foreignPriceList) 
-     bookingPage.numberOfSeats(50)
+     bookingPage.numberOfSeats(5)
      bookingPage.typeDateOfTheTrip("2023-01-15")
-     bookingPage.typeOfTour("foreignTour")
+     bookingPage.typeOfTour(tourVariables.foreign)
      bookingPage.defaultStartingPlace()
      bookingPage.addTheTour()    
   })
@@ -37,7 +38,7 @@ describe('tests for adding tour function', () => {
     bookingPage.addNameForTour(exampleTour.foreignName,exampleTour.foreignPriceList) 
     bookingPage.negativeNumberOfSeats(5)
     bookingPage.typeDateOfTheTrip("2022-12-03")
-    bookingPage.typeOfTour("foreignTour")
+    bookingPage.typeOfTour(tourVariables.foreign)
     bookingPage.defaultStartingPlace()
     bookingPage.addTheTour()    
   })
@@ -55,7 +56,7 @@ describe('tests for adding tour function', () => {
     bookingPage.addNameForTour(exampleTour.foreignName,exampleTour.foreignPriceList) 
     bookingPage.numberOfSeats(5)
     bookingPage.typeDateOfTheTrip("2020-01-07")
-    bookingPage.typeOfTour("foreignTour")
+    bookingPage.typeOfTour(tourVariables.foreign)
     bookingPage.defaultStartingPlace()
     bookingPage.addTheTour()
     bookingPage.dateMsgErrorCheck()
