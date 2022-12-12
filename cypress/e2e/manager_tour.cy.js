@@ -16,28 +16,39 @@ describe('tests for adding tour function', () => {
      bookingPage.addTourButtonClick()
      bookingPage.addNameForTour(exampleTour.polishName,exampleTour.polishPriceList) 
      bookingPage.numberOfSeats(5)
-     bookingPage.typeDateOfTheTrip("2023-08-22")
+     bookingPage.typeDateOfTheTrip(tourVariables.correctDate)
      bookingPage.typeOfTour(tourVariables.polish)
      bookingPage.defaultStartingPlace()
-     bookingPage.addTheTour()    
+     bookingPage.addTheTour()   
    })
+    it('Check if polish tour was correctly added', () =>{
+    login();    
+    bookingPage.checkIfTourAdded(exampleTour.polishName)    
+  })
+
    it('Positive scenario - manager add foreign tour', () =>{
      login();    
      bookingPage.addTourButtonClick()
      bookingPage.addNameForTour(exampleTour.foreignName,exampleTour.foreignPriceList) 
      bookingPage.numberOfSeats(5)
-     bookingPage.typeDateOfTheTrip("2023-01-15")
+     bookingPage.typeDateOfTheTrip(tourVariables.correctDate)
      bookingPage.typeOfTour(tourVariables.foreign)
      bookingPage.defaultStartingPlace()
-     bookingPage.addTheTour()    
+     bookingPage.addTheTour()
+      
   })
+    it('Check if foreign tour was correctly added', () =>{
+    login();    
+    bookingPage.checkIfTourAdded(exampleTour.polishName)    
+  })
+
   
   it('Negative scenario - manager try to add tour with negative number of seats', () =>{
     login();    
     bookingPage.addTourButtonClick()
     bookingPage.addNameForTour(exampleTour.foreignName,exampleTour.foreignPriceList) 
     bookingPage.negativeNumberOfSeats(5)
-    bookingPage.typeDateOfTheTrip("2022-12-03")
+    bookingPage.typeDateOfTheTrip(tourVariables.pastDate)
     bookingPage.typeOfTour(tourVariables.foreign)
     bookingPage.defaultStartingPlace()
     bookingPage.addTheTour()    
@@ -55,7 +66,7 @@ describe('tests for adding tour function', () => {
     bookingPage.addTourButtonClick()
     bookingPage.addNameForTour(exampleTour.foreignName,exampleTour.foreignPriceList) 
     bookingPage.numberOfSeats(5)
-    bookingPage.typeDateOfTheTrip("2020-01-07")
+    bookingPage.typeDateOfTheTrip(tourVariables.pastDate)
     bookingPage.typeOfTour(tourVariables.foreign)
     bookingPage.defaultStartingPlace()
     bookingPage.addTheTour()

@@ -17,12 +17,18 @@ class bookingPage {
             cy.get(TOURS_SELECTORS.addTripBtn).eq(2).click()
         }
 
+    checkIfTourAdded(name){
+        cy.get(TOURS_SELECTORS.tourAdded).contains(name)
+    }
+
     confirmManagerPermission(){
-            cy.get(TOURS_SELECTORS.addTourBtn).should(assertionMsg.Id, assertionMsg.MgrPer)
+            cy.get(TOURS_SELECTORS.addTourBtn).should(assertionMsg.id, assertionMsg.mgrPer)
         } //
 
     dateMsgErrorCheck(){
-        cy.xpath(TOURS_SELECTORS.dateMsgErr).should(assertionMsg.Text, assertionMsg.DateErrMsg)
+
+        cy.get(TOURS_SELECTORS.dateMsgErr).contains(assertionMsg.dateErrMsg)
+       
         }
 
     defaultStartingPlace(){
@@ -31,7 +37,8 @@ class bookingPage {
         }
 
     nameFieldErrorMsgCheck(){
-        cy.xpath(assertionMsg.ReqNameMsgXP).should(assertionMsg.Text, assertionMsg.ReqNameMsg)    
+        cy.get(TOURS_SELECTORS.nameErr).contains(assertionMsg.reqNameMsg)
+       
         }          
     numberOfSeats(a){
         for(let n = 1; n < a; n ++){
@@ -44,7 +51,8 @@ class bookingPage {
           }
     }
     priceListErrorMsgCheck(){
-        cy.xpath(assertionMsg.priceListXP).should(assertionMsg.Text, assertionMsg.ReqPriceListMsg)    
+
+        cy.get(TOURS_SELECTORS.priceListErr).contains(assertionMsg.reqPriceListMsg)    
     }
     typeDateOfTheTrip(date){
         cy.get(TOURS_SELECTORS.dateOfTour).eq(0).clear().type(date)

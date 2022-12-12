@@ -4,12 +4,12 @@ import {assertionMsg} from "../support/assertionMsg"
 class loginPage{
 
     emptyLoginFieldMsgCheck(){
-        cy.xpath(LOGIN_SELECTORS.RequieredLogMsg).should(assertionMsg.Text, assertionMsg.ReqlogMsg)
-        cy.xpath(LOGIN_SELECTORS.RequieredPassMsg).should(assertionMsg.Text, assertionMsg.ReqPassMsg)
+        cy.get(LOGIN_SELECTORS.emptyValidErr).contains(assertionMsg.reqlogMsg)
+        cy.get(LOGIN_SELECTORS.emptyValidErr).contains(assertionMsg.reqPassMsg)
     } 
     
     verifyIncorrectLoginMsg(){
-         cy.xpath(LOGIN_SELECTORS.incorrectLogMsg).should(assertionMsg.Text, assertionMsg.IncLogPassMsg)    
+        cy.get(LOGIN_SELECTORS.logValidErr).contains(assertionMsg.validlog)    
      }
 
     loginButton(){
