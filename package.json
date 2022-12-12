@@ -4,7 +4,7 @@
   "description": "Test automation project for ctmajer agency",
   "main": "index.js",
   "scripts": {
-    "open": "cypress open --e2e --browser chrome"
+    "open": "cypress open"
   },
   "keywords": [
     "javascript",
