@@ -1,3 +1,4 @@
+//import { expect } from "chai"
 import { TOURS_SELECTORS } from "../locators/tours-selectors"
 import {assertionMsg} from "../support/assertionMsg"
 import {tourVariables} from "../support/tourVariables"
@@ -16,6 +17,15 @@ class bookingPage {
     addTheTour(){
             cy.get(TOURS_SELECTORS.addTripBtn).eq(2).click()
         }
+    
+    deleteTheTour(){
+            cy.get(TOURS_SELECTORS.tourDeleted).eq(0).click()
+            cy.on("window:confirm", (message) =>{
+                expect(message).to.be.equal("Czy na pewno usunąć wycieczkę?")
+            })
+            cy.on("window:confirm", () => { true;});
+               
+    }
 
     checkIfTourAdded(name){
         cy.get(TOURS_SELECTORS.tourAdded).contains(name)

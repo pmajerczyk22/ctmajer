@@ -19,11 +19,17 @@ describe('tests for adding tour function', () => {
      bookingPage.typeDateOfTheTrip(tourVariables.correctDate)
      bookingPage.typeOfTour(tourVariables.polish)
      bookingPage.defaultStartingPlace()
-     bookingPage.addTheTour()   
+     bookingPage.addTheTour()
    })
     it('Check if polish tour was correctly added', () =>{
     login();    
     bookingPage.checkIfTourAdded(exampleTour.polishName)    
+  })
+
+    it('Delete unwanted tour', () =>{
+    login(); 
+    bookingPage.deleteTheTour()     
+    
   })
 
    it('Positive scenario - manager add foreign tour', () =>{
@@ -39,7 +45,13 @@ describe('tests for adding tour function', () => {
   })
     it('Check if foreign tour was correctly added', () =>{
     login();    
-    bookingPage.checkIfTourAdded(exampleTour.polishName)    
+    bookingPage.checkIfTourAdded(exampleTour.foreignName)    
+  })
+
+  it('Delete unwanted tour', () =>{
+    login(); 
+    bookingPage.deleteTheTour()   
+    
   })
 
   
@@ -51,7 +63,8 @@ describe('tests for adding tour function', () => {
     bookingPage.typeDateOfTheTrip(tourVariables.pastDate)
     bookingPage.typeOfTour(tourVariables.foreign)
     bookingPage.defaultStartingPlace()
-    bookingPage.addTheTour()    
+    bookingPage.addTheTour()
+     
   })
 
   it('Negative scenario - manager try to add empty tour', () =>{

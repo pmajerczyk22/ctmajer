@@ -12,7 +12,8 @@ export const TOURS_SELECTORS = {
     seatsArrowDown: '[class="k-icon k-i-arrow-60-down"]',
     typeOfTour: '#Type',
     dateOfTour: '[class="k-picker-wrap k-state-default"]',
-    tourAdded: 'td'
+    tourAdded: 'td',
+    tourDeleted: '[class="glyphicon glyphicon-remove"]'
    
 }
 

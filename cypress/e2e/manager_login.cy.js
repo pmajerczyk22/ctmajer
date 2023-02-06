@@ -18,9 +18,9 @@ describe('tests for login function', () => {
     loginPage.verifyIncorrectLoginMsg()
   })
 
-  it('Positive scenario - login with correct credentials', () => {
+  it('Admin log in with valid credentials', () => {
     loginPage.submitLogin(testUser.login,testUser.pass)
-    bookingPage.confirmManagerPermission()
+    bookingPage.confirmManagerPermission()//comment
   })
   
 
